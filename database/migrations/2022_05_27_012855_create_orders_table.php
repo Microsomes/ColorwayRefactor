@@ -37,7 +37,7 @@ class CreateOrdersTable extends Migration
 
             $table->string('externalStatus')->default('Acknowledged (201)');
 
-            $table->timestamp('lastChange')->default(now());
+            $table->timestamp('lastChange')->useCurrent();
 
             $table->string('customerFirstName')->nullable();
 
@@ -54,7 +54,6 @@ class CreateOrdersTable extends Migration
             $table->integer('isGrabbedForDownlaod')->default(0);
 
             $table->string('allpdfPaths')->nullable();
-
 
         });
     }
