@@ -14,8 +14,19 @@ class CreateHistoricalTracksTable extends Migration
     public function up()
     {
         Schema::create('historical_track', function (Blueprint $table) {
+            
             $table->id();
-            $table->timestamps();
+            
+            $table->string('author');
+
+            $table->string('status');
+
+            $table->string('item_id');
+
+            $table->string('order_id');
+
+            $table->timestamp('timestramp')->useCurrent();
+
         });
     }
 
